@@ -31,6 +31,7 @@ def getAllInformations():
         
 
 def showWeather(res_temp):
+    print('getting weather...')
     forecast = res_temp.json()
     
     weather = forecast['current_observation']['weather']
@@ -38,7 +39,7 @@ def showWeather(res_temp):
     feels_like = forecast['current_observation']['feelslike_c']
     humid = forecast['current_observation']['relative_humidity']
     last_observation = forecast['current_observation']['observation_time_rfc822']
-    wind_gust = forecast['current_observation']['wind_gust_kph']
+    wind_gust = str(forecast['current_observation']['wind_gust_kph'])
     temp_min = str(forecast['current_observation']['dewpoint_c'])
     temp_max = str(forecast['current_observation']['heat_index_c'])
     
@@ -54,6 +55,7 @@ def showWeather(res_temp):
     sleep(5)
     
 def showCoins(res_coins):
+    print('getting coins...')
     coins = res_coins.json()
     
     dolar = coins['moedas'][0]['valor']
